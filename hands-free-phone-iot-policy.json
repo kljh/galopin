@@ -1,0 +1,39 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": "iot:Connect",
+      "Resource": [
+        "arn:aws:iot:eu-west-3:933377361323:client/hands-free-phone-iot",
+        "arn:aws:iot:eu-west-3:933377361323:client/hands-free-phone-iot-test"
+      ]
+    },
+    {
+      "Effect": "Allow",
+      "Action": "iot:Publish",
+      "Resource": [
+        "arn:aws:iot:eu-west-3:933377361323:topic/devices/incoming-call",
+        "arn:aws:iot:eu-west-3:933377361323:topic/devices/*/incoming-call",
+        "arn:aws:iot:eu-west-3:933377361323:topic/devices/*/outgoing-call",
+        "arn:aws:iot:eu-west-3:933377361323:topic/devices/outgoing-call"
+      ]
+    },
+    {
+      "Effect": "Allow",
+      "Action": "iot:Subscribe",
+      "Resource": [
+        "arn:aws:iot:eu-west-3:933377361323:topicfilter/devices/+/outgoing-call",
+        "arn:aws:iot:eu-west-3:933377361323:topicfilter/devices/outgoing-call"
+      ]
+    },
+    {
+      "Effect": "Allow",
+      "Action": "iot:Receive",
+      "Resource": [
+        "arn:aws:iot:eu-west-3:933377361323:topic/devices/*/outgoing-call",
+        "arn:aws:iot:eu-west-3:933377361323:topic/devices/outgoing-call"
+      ]
+    }
+  ]
+}
